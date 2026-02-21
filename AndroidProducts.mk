@@ -6,9 +6,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_INOI_A75_Elegance.mk
+    $(LOCAL_DIR)/twrp_INOI_A75_Elegance.mk \
+    $(LOCAL_DIR)/omni_INOI_A75_Elegance.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_INOI_A75_Elegance-ap3a-eng \
-    twrp_INOI_A75_Elegance-ap3a-userdebug
-
+    omni_INOI_A75_Elegance-ap3a-eng \
+    omni_INOI_A75_Elegance-ap3a-userdebug
