@@ -6,6 +6,7 @@
 #
 
 LOCAL_PATH := device/inoi_limited/INOI_A75_Elegance
+
 # A/B
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -21,15 +22,19 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     bootctrl.mt6789
 
-PRODUCT_STATIC_BOOT_CONTROL_HAL := \
-    bootctrl.mt6789 \
-    libgptutils \
-    libz \
-    libcutils
-
 PRODUCT_PACKAGES += \
     otapreopt_script \
     cppreopts.sh \
     update_engine \
     update_verifier \
     update_engine_sideload
+
+# Fastbootd
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.1-impl-mock \
+    fastbootd
+
+# A/B support
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
+
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
